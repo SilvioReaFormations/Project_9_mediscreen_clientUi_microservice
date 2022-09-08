@@ -13,7 +13,9 @@
 	</div>
 
 	<div class="row">
-		<form action="#" th:action="@{/patient/update/{id}(id=${patientUpdate.getPatientId()})}" th:object="${patientUpdate}" method="post" class="form-horizontal" style="width: 100%">
+		<form action="#" th:action="@{/patient/update/{id}(id=${patientBean.getPatientId()})}" th:object="${patientBean}" method="post" class="form-horizontal" style="width: 100%">
+			 
+			 <input type="hidden" th:field="*{patientId}">
 			 
 			 <div class="form-group">
 				<label for="firstName" class="col-sm-2 control-label">First Name</label>
