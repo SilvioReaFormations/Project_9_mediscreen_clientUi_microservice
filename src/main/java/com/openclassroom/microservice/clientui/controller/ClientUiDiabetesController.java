@@ -47,7 +47,6 @@ public class ClientUiDiabetesController
 			newList.add(noteBean.getPatientNote());
 		}
 	
-	//	noteProxy.getAllNotes(patientId).stream().map(list -> list.getPatientNote()).collect(Collectors.toList());
 		
 		diabetes.setPatientBirthdate(patient.getBirthdate());
 		diabetes.setPatientGender(patient.getGender());

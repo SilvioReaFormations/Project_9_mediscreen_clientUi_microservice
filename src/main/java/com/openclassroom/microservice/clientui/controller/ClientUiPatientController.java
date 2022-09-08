@@ -72,24 +72,25 @@ public class ClientUiPatientController
 	@GetMapping("/patient/update/{id}")
 	public String updatePatient(@PathVariable("id") Integer id, Model model)
 	{
-		model.addAttribute("patientUpdate", proxy.getPatient(id).get());
+		model.addAttribute("patientBean", proxy.getPatient(id).get());
 		return "patient/updatePatientForm";
 	}
 	
 	
 	@PostMapping("/patient/update/{id}")
-	public String updatePatient(@PathVariable("id") Integer id, @ModelAttribute @Valid PatientBean patientUpdate, 
+	public String updatePatient(@PathVariable("id") Integer id, @Valid PatientBean patientBean, 
 			BindingResult result, Model model)
 	{
 		
 		if (result.hasErrors())
 		{
+//			model.addAttribute("patientUpdate", proxy.getPatient(id).get());
 			logger.warn("Update error");
 			return "patient/updatePatientForm";
 		}
 
-		proxy.updatePatient(id, patientUpdate);
-		logger.info(patientUpdate.getFirstName() +" "+ patientUpdate.getLastName()+ " updated");
+		proxy.updatePatient(id, patientBean);
+		logger.info(patientBean.getFirstName() +" "+ patientBean.getLastName()+ " updated");
 		
 		return "redirect:/";
 	}
