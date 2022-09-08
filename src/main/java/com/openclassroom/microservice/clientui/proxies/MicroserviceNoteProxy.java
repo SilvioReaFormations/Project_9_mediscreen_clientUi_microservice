@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.openclassroom.microservice.clientui.beans.NoteBean;
 
-@FeignClient(name="mediscreen-note", url="localhost:8082")
+@FeignClient(name="mediscreen-note", url="host.docker.internal:8082")
 public interface MicroserviceNoteProxy
 {
 	

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.openclassroom.microservice.clientui.beans.PatientBean;
 
 
-@FeignClient(name="mediscreen-patient", url="localhost:8081")
+@FeignClient(name="mediscreen-patient", url="host.docker.internal:8081")
 public interface MicroservicePatientsProxy
 {
 	

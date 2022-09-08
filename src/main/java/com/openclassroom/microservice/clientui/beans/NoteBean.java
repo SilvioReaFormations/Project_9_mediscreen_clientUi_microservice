@@ -9,18 +9,11 @@ public class NoteBean
 	private String patientNote;
 	private Integer patientId;
 
-	
-	
-	
-
-
 
 	public NoteBean()
 	{
 		super();
 	}
-
-
 
 	public NoteBean(@NotEmpty(message = "Note is mandatory") String patientNote, Integer patientId)
 	{

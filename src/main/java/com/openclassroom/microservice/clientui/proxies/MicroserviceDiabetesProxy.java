@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.openclassroom.microservice.clientui.beans.CaseOfDiabetesBean;
 
 
-@FeignClient(name="mediscreen-diabetes", url="localhost:8083")
+@FeignClient(name="mediscreen-diabetes", url="host.docker.internal:8083")
 public interface MicroserviceDiabetesProxy
 {
 	
